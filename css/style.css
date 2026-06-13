@@ -358,6 +358,17 @@ p { line-height: 1.72; }
   box-shadow: 0 20px 60px rgba(0,0,0,.4);
 }
 
+/* Invisible hover-bridge: fills the 8px gap between the trigger and the
+   menu so moving the mouse down to an item never drops :hover. */
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -12px;
+  height: 12px;
+}
+
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
   opacity: 1;
