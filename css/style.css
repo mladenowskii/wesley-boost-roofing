@@ -2114,6 +2114,18 @@ p { line-height: 1.72; }
   .gallery-item.tall { aspect-ratio: 4/3; }
 }
 
+/* ─── Wesley Founder Section — Mobile ─── */
+@media (max-width: 768px) {
+  .wesley-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .wesley-grid > div:first-child {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
 /* ─── Cursor improvements ─── */
 .gallery-item  { cursor: zoom-in; }
 .filter-tab    { cursor: pointer; }
