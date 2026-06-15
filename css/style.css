@@ -281,12 +281,21 @@ p { line-height: 1.72; }
   gap: 1.5rem;
 }
 
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
   gap: 0.25rem;
   text-decoration: none;
   flex-shrink: 0;
+}
+
+.nav-logo img {
+  animation: logoFadeIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .logo-icon {
