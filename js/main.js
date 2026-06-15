@@ -19,14 +19,25 @@
 
   /* ─── Sticky Navbar ─── */
   const navbar = document.getElementById('navbar');
-  const navTopBar = document.querySelector('.nav-top');
   if (navbar) {
-    function getNavTopH() {
-      if (!navTopBar) return 0;
-      return getComputedStyle(navTopBar).display === 'none' ? 0 : navTopBar.offsetHeight;
+    /* Sum the height of every in-flow bar stacked above the navbar
+       (e.g. the emergency banner + the top contact bar). Hidden or
+       absolutely-positioned elements (skip link, mobile-hidden top bar)
+       are ignored, so this works on every page automatically. */
+    function getBarsHeight() {
+      let total = 0;
+      let el = navbar.previousElementSibling;
+      while (el) {
+        const cs = getComputedStyle(el);
+        if (cs.display !== 'none' && cs.position !== 'absolute' && cs.position !== 'fixed') {
+          total += el.offsetHeight;
+        }
+        el = el.previousElementSibling;
+      }
+      return total;
     }
     const onScroll = throttle(function () {
-      const h = getNavTopH();
+      const h = getBarsHeight();
       const sy = window.scrollY;
       navbar.classList.toggle('scrolled', sy > 60);
       navbar.style.top = Math.max(0, h - sy) + 'px';
