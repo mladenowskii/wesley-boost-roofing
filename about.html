@@ -93,8 +93,16 @@
 <section class="section">
   <div class="container">
     <div class="grid-2" style="gap:4rem;align-items:center;">
-      <div class="fade-up">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Boost Roofing team" style="border-radius:var(--radius-xl);width:100%;object-fit:cover;height:460px;" loading="lazy" />
+      <div class="fade-up" style="position:relative;display:flex;justify-content:center;">
+        <!-- Orange corner brackets -->
+        <div style="position:absolute;top:-16px;left:-16px;width:56px;height:56px;border-top:4px solid var(--orange);border-left:4px solid var(--orange);border-radius:6px 0 0 0;z-index:2;"></div>
+        <div style="position:absolute;bottom:-16px;right:-16px;width:56px;height:56px;border-bottom:4px solid var(--orange);border-right:4px solid var(--orange);border-radius:0 0 6px 0;z-index:2;"></div>
+        <!-- Offset shadow block -->
+        <div style="position:absolute;top:16px;left:16px;width:100%;height:100%;background:var(--orange);border-radius:var(--radius-xl);opacity:.15;"></div>
+        <!-- Photo -->
+        <div style="position:relative;width:100%;border-radius:var(--radius-xl);overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.18);">
+          <img src="images/hero-bg.jpg" alt="Boost Roofing team on the job" style="width:100%;display:block;object-fit:cover;object-position:center 30%;height:460px;" loading="lazy" />
+        </div>
       </div>
       <div class="fade-up fade-up-delay-1">
         <div class="section-label">Who We Are</div>

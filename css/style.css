@@ -1276,8 +1276,9 @@ p { line-height: 1.72; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80') center/cover no-repeat;
-  opacity: 0.22;
+  background: url('../images/hero-bg.jpg') center/cover no-repeat;
+  opacity: 0.38;
+  filter: brightness(0.75) saturate(0.85);
 }
 
 .hero-bg-gradient {
